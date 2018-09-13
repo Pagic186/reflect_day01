@@ -24,4 +24,8 @@ public class MyBeanUtil {
 		} 
 		
 	}
+	
+	public static void main(String[] args) {
+		
+	}
 }
