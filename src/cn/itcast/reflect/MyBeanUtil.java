@@ -1,12 +1,11 @@
 package cn.itcast.reflect;
 
-import java.lang.reflect.Field;
-
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Field;
 
 public class MyBeanUtil {
 	/**
-	 * ×Ô¶¨Òå·½·¨,Ê¹ÓÃ·´Éä¼¼Êõ·â×°¶ÔÏó
+	 * è‡ªå®šä¹‰æ–¹æ³•,ä½¿ç”¨åå°„æŠ€æœ¯å°è£…å¯¹è±¡
 	 */
 	
 	public static void populate(Object obj,HttpServletRequest request) {

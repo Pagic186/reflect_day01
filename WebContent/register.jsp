@@ -8,6 +8,7 @@
 </head>
 <body>
 	<form action="registerServlet" method="post">
+
 		用户名：<input name="username" /><br/>
 		密码：<input type="password" name="password" /><br/><br/><br/>
 		爱好：<input type="checkbox" name="hobby" value="爱边城" />爱边城

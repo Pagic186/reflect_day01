@@ -1,58 +1,58 @@
 package cn.itcast.reflect;
 
+import org.junit.Test;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import org.junit.Test;
-
 public class ReflectDemo {
 	
 	/**
-	 * ·´Éä¹¹Ôìº¯Êı
+	 * åå°„æ„é€ å‡½æ•°
 	 */
 	@Test
 	public void constractor() throws Exception {
-		//1.»ñÈ¡class¶ÔÏó
+		//1.è·å–classå¯¹è±¡
 		Class clazz = Student.class;
-		//2.Í¨¹ıclazz»ñÈ¡¹¹Ôìº¯Êı
+		//2.é€šè¿‡clazzè·å–æ„é€ å‡½æ•°
 		Constructor c = clazz.getConstructor(null);
-		//3.Ê¹ÓÃ¹¹Ôìº¯ÊıÀ´¹¹ÔìÀàµÄ¶ÔÏó
+		//3.ä½¿ç”¨æ„é€ å‡½æ•°æ¥æ„é€ ç±»çš„å¯¹è±¡
 		Student stu = (Student) c.newInstance(null);
 		System.out.println(stu);
 		
-		//·´ÉäÓĞ²ÎÊıµÄ¹¹Ôìº¯Êı
+		//åå°„æœ‰å‚æ•°çš„æ„é€ å‡½æ•°
 		Constructor c2 = clazz.getConstructor(int.class,String.class,int.class);
-		Student stu2 = (Student) c2.newInstance(1,"ÕÅÈı",18);
+		Student stu2 = (Student) c2.newInstance(1,"å¼ ä¸‰",18);
 		System.out.println(stu2);
 	}
 	
 	/**
-	 * ·´ÉäÀàÖĞµÄ³ÉÔ±ÊôĞÔ
+	 * åå°„ç±»ä¸­çš„æˆå‘˜å±æ€§
 	 */
 	@Test
 	public void field() throws Exception {
 		Student stu = new Student();
 		Class clazz = stu.getClass();
 		Field nameField = clazz.getDeclaredField("name");
-		//±©Á¦·´Éä
+		//æš´åŠ›åå°„
 		nameField.setAccessible(true);
-		nameField.set(stu, "ÍõÎå");
+		nameField.set(stu, "ç‹äº”");
 		Object obj = nameField.get(stu);
 		System.out.println(obj);
 		
 	}
 	
 	/**
-	 * ·´ÉäÀàÖĞµÄ³ÉÔ±·½·¨
+	 * åå°„ç±»ä¸­çš„æˆå‘˜æ–¹æ³•
 	 */
 	@Test
 	public void method() throws Exception{
 		Class clazz = Class.forName("cn.itcast.reflect.Student");
 		Method m = clazz.getMethod("setName", String.class);
-		//Í¨¹ıClass»ñÈ¡ÀàµÄÊµÀı
+		//é€šè¿‡Classè·å–ç±»çš„å®ä¾‹
 		Student stu = (Student) clazz.newInstance();
-		m.invoke(stu, "ÕÔÁù");
+		m.invoke(stu, "èµµå…­");
 		System.out.println(stu);
 	}
 }

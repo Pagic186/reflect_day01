@@ -7,14 +7,14 @@ public class Student {
 	private int age;
 	
 	/**
-	 * ÎŞ²Î¹¹Ôìº¯Êı
+	 * æ— å‚æ„é€ å‡½æ•°
 	 */
 	public Student() {
 		
 	}
 	
 	/**
-	 * ÓĞ²Î¹¹Ôìº¯Êı
+	 * æœ‰å‚æ„é€ å‡½æ•°
 	 */
 	public Student (int id,String name,int age) {
 		this.id=id;
@@ -23,7 +23,7 @@ public class Student {
 	}
 	
 	/**
-	 * get,set·½·¨
+	 * get,setæ–¹æ³•
 	 */
 	public int getId() {
 		return id;
@@ -55,10 +55,10 @@ public class Student {
 	}
 	
 	/**
-	 * ×ÔÎÒ½éÉÜµÄ·½·¨
+	 * è‡ªæˆ‘ä»‹ç»çš„æ–¹æ³•
 	 */
 	private void info() {
-		System.out.println("ÎÒµÄÃû×Ö½Ğ"+name+",ÎÒ½ñÄê"+age+"Ëê,ÎÒµÄIDÊÇ"+id);
+		System.out.println("æˆ‘çš„åå­—å«"+name+",æˆ‘ä»Šå¹´"+age+"å²,æˆ‘çš„IDæ˜¯"+id);
 	}
 	
 }
